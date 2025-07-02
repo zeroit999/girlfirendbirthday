@@ -1,0 +1,285 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: "Segoe UI", cursive;
+  background: linear-gradient(to top right, #ffe4ec, #fff0f5);
+  overflow-x: hidden;
+}
+
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #fff0f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader-heart {
+  font-size: 3em;
+  animation: beat 0.6s infinite alternate;
+  color: #e91e63;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #ffb6c1;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#main {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding-top: 80px;
+  margin-bottom: 50px;
+}
+
+@keyframes beat {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.3);
+  }
+}
+
+h1 {
+  color: #e91e63;
+  font-size: 2.4em;
+  margin: 20px;
+}
+
+.heart-container {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.heart-btn {
+  width: 80px;
+  height: 80px;
+  background-color: #ff69b4;
+  border-radius: 50%;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.heart-btn:hover {
+  transform: scale(1.2);
+}
+
+.gift-box {
+  margin-top: 30px;
+  font-size: 4em;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gift-box:hover {
+  transform: scale(1.2);
+}
+
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  color: #ff69b4;
+  font-size: 2em;
+  animation: floatUp 5s linear infinite;
+  opacity: 0.8;
+}
+
+.main-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 100;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-10vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+#love-question-container {
+  margin-top: 100px;
+  text-align: center;
+}
+
+#game-area {
+  position: relative; /* ✅ Fix lỗi không hiển thị nút */
+  width: 100%;
+  height: 350px;
+  margin: 0 auto;
+  border: 2px dashed pink;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 10px pink;
+  background-color: #fff0f5;
+}
+
+.love-btn {
+  padding: 10px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  position: absolute;
+  cursor: pointer;
+  transition: top 0.2s, left 0.2s;
+}
+
+#yes {
+  background-color: #4CAF50;
+  color: white;
+  top: 50px;
+  left: 80px;
+}
+
+#no {
+  background-color: #f44336;
+  color: white;
+  top: 50px;
+  left: 200px;
+}
+
+/* === Responsive cho iPhone X (375 x 812, DPR 3) === */
+@media only screen 
+  and (device-width: 375px) 
+  and (device-height: 812px) 
+  and (-webkit-device-pixel-ratio: 3) {
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .heart-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 1.6em;
+  }
+
+  .gift-box {
+    font-size: 3em;
+  }
+
+  #game-area {
+    height: 280px;
+  }
+
+  .love-btn {
+    font-size: 16px;
+    padding: 8px 20px;
+  }
+
+  footer {
+    font-size: 0.9em;
+  }
+}
+
+/* === Responsive cho Galaxy Tab A8 === */
+@media only screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1280px)
+  and (min-device-height: 1800px) 
+  and (max-device-height: 2000px) {
+  
+  h1 {
+    font-size: 2.6em;
+  }
+
+  .heart-btn {
+    width: 90px;
+    height: 90px;
+    font-size: 2.2em;
+  }
+
+  .gift-box {
+    font-size: 5em;
+  }
+
+  #game-area {
+    height: 400px;
+  }
+
+  .love-btn {
+    font-size: 22px;
+    padding: 14px 30px;
+  }
+
+  footer {
+    font-size: 1.2em;
+  }
+}
+
+/* ✅ Responsive chung cho điện thoại nhỏ (bổ sung thêm) */
+@media screen and (max-width: 425px) {
+  #game-area {
+    height: 250px;
+  }
+
+  .love-btn {
+    font-size: 14px;
+    padding: 6px 16px;
+  }
+}

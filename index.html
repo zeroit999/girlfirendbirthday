@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chúc mừng sinh nhật em yêu 🎂</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Loading -->
+    <div id="loader">
+      <div class="loader-heart">💗</div>
+      <p style="margin-top: 15px; color: #e91e63">
+        Đang chuẩn bị điều bất ngờ mừng sinh nhật em 💝...
+      </p>
+    </div>
+
+    <nav class="navbar">
+      <div class="nav-title">🎂 Sinh nhật bé yêu 🎉</div>
+    </nav>
+
+    <!-- Nội dung chính -->
+    <div id="main">
+      <div class="main-box">
+        <h1>🎉 Nhấn vào trái tim để nhận điều đặc biệt 🎉</h1>
+
+        <div class="heart-container">
+          <button class="heart-btn" onclick="showWish(this)">❤️</button>
+          <button class="heart-btn" onclick="showWish(this)">💖</button>
+          <button class="heart-btn" onclick="showWish(this)">💕</button>
+          <button class="heart-btn" onclick="showWish(this)">💗</button>
+        </div>
+
+        <!-- Hộp quà -->
+        <div class="gift-box" onclick="openGift()">🎁</div>
+      </div>
+    </div>
+
+    <!-- Câu hỏi trêu người yêu -->
+    <section id="love-question-container">
+      <h2>Bé có thương anh không? 🥺</h2>
+      <div id="game-area">
+        <button id="yes" class="love-btn">Có</button>
+        <button id="no" class="love-btn">Không</button>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 - Bản quyền thuộc về Khoa Lê Anh 💞</p>
+    </footer>
+
+    <!-- Trái tim bay -->
+    <div class="hearts" id="hearts"></div>
+
+    <!-- Âm nhạc nền -->
+    <audio id="background-music" loop>
+      <source src="audio/happy_birthday.mp3" type="audio/mpeg" />
+      Trình duyệt của bạn không hỗ trợ phát âm thanh.
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
